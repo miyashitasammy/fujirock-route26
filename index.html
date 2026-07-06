@@ -184,12 +184,16 @@
   }
 
   /* ---- Artist cards ---- */
+  html{
+    scroll-behavior:smooth;
+  }
   .artist-card{
     border:4px solid var(--ink);
     background:var(--paper);
     padding:20px;
     margin-bottom:26px;
     box-shadow:6px 6px 0 var(--ink);
+    scroll-margin-top:20px;
   }
   .artist-head{
     display:flex;
@@ -296,6 +300,15 @@
     line-height:1.4;
   }
   .timeline-row.live .timeline-content{font-weight:700;}
+  .timeline-link{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:2px solid var(--ink);
+  }
+  .timeline-link:hover{
+    background:var(--ink);
+    color:var(--paper);
+  }
   .timeline-stage-badge{
     font-family:'IBM Plex Mono',monospace;
     font-size:0.65rem;
@@ -361,7 +374,7 @@
 
     <h3 class="sub-heading">おすすめアーティスト</h3>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-route17">
       <div class="artist-head">
         <span class="stage-badge stage-green">GREEN STAGE</span>
         <span class="artist-time">11:00–12:00</span>
@@ -374,7 +387,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-sonrompepera">
       <div class="artist-head">
         <span class="stage-badge stage-white">WHITE STAGE</span>
         <span class="artist-time">13:00–13:50</span>
@@ -387,7 +400,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-altingun">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">15:40–16:40</span>
@@ -400,7 +413,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-ogre">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">16:40–17:40</span>
@@ -413,7 +426,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-histandard">
       <div class="artist-head">
         <span class="stage-badge stage-green">GREEN STAGE</span>
         <span class="artist-time">19:00–20:10</span>
@@ -426,7 +439,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-lettuce">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">21:30–23:00</span>
@@ -439,7 +452,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-sugiurumn">
       <div class="artist-head">
         <span class="stage-badge stage-ganban">GAN-BAN SQUARE</span>
         <span class="artist-time">23:30–25:00</span>
@@ -461,7 +474,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">11:00<br>–12:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>ROUTE 17 Rock'n'Roll ORCHESTRA</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-route17" class="timeline-link">ROUTE 17 Rock'n'Roll ORCHESTRA</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">12:00<br>–13:00</div>
@@ -469,7 +482,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">13:00<br>–13:50</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span>SON ROMPE PERA</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span><a href="#a-sonrompepera" class="timeline-link">SON ROMPE PERA</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">13:50<br>–15:40</div>
@@ -477,11 +490,11 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">15:40<br>–16:40</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>ALTIN GÜN</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-altingun" class="timeline-link">ALTIN GÜN</a></div>
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">16:40<br>–17:40</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>OGRE YOU ASSHOLE（同ステージにつき移動なし）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-ogre" class="timeline-link">OGRE YOU ASSHOLE</a>（同ステージにつき移動なし）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">17:40<br>–19:00</div>
@@ -489,7 +502,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">19:00<br>–20:10</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>Hi-STANDARD</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-histandard" class="timeline-link">Hi-STANDARD</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">20:10<br>–21:30</div>
@@ -497,7 +510,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">21:30<br>–23:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>LETTUCE</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-lettuce" class="timeline-link">LETTUCE</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">23:00<br>–23:30</div>
@@ -505,7 +518,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">23:30<br>–25:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-ganban">GAN-BAN SQUARE</span>SUGIURUMN</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-ganban">GAN-BAN SQUARE</span><a href="#a-sugiurumn" class="timeline-link">SUGIURUMN</a></div>
       </div>
     </div>
 
@@ -517,7 +530,7 @@
 
     <h3 class="sub-heading">おすすめアーティスト</h3>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-shibata">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">11:10–12:00</span>
@@ -530,7 +543,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-zasavage">
       <div class="artist-head">
         <span class="stage-badge stage-shokudo">苗場食堂</span>
         <span class="artist-time">12:10–12:50</span>
@@ -543,7 +556,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-neconemuru">
       <div class="artist-head">
         <span class="stage-badge stage-echo">ORANGE ECHO</span>
         <span class="artist-time">13:50–14:30</span>
@@ -556,7 +569,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-basementjaxx">
       <div class="artist-head">
         <span class="stage-badge stage-green">GREEN STAGE</span>
         <span class="artist-time">17:00–18:00</span>
@@ -569,7 +582,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-dmbq">
       <div class="artist-head">
         <span class="stage-badge stage-echo">ORANGE ECHO</span>
         <span class="artist-time">17:50–18:30</span>
@@ -582,7 +595,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-bbng">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">20:30–22:00</span>
@@ -595,7 +608,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-tomora">
       <div class="artist-head">
         <span class="stage-badge stage-white">WHITE STAGE</span>
         <span class="artist-time">22:00–23:15</span>
@@ -608,7 +621,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-soichiterada">
       <div class="artist-head">
         <span class="stage-badge stage-red">RED MARQUEE</span>
         <span class="artist-time">27:30–29:00</span>
@@ -630,7 +643,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">11:10<br>–12:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>柴田聡子（BAND SET）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-shibata" class="timeline-link">柴田聡子（BAND SET）</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">12:00<br>–12:10</div>
@@ -638,7 +651,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">12:10<br>–12:50</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span>Za SAVAGE（移動状況次第で途中合流でもOK）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span><a href="#a-zasavage" class="timeline-link">Za SAVAGE</a>（移動状況次第で途中合流でもOK）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">12:50<br>–13:50</div>
@@ -646,7 +659,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">13:50<br>–14:30</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>neco眠る</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span><a href="#a-neconemuru" class="timeline-link">neco眠る</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">14:30<br>–17:00</div>
@@ -654,7 +667,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">17:00<br>–18:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>BASEMENT JAXX</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-basementjaxx" class="timeline-link">BASEMENT JAXX</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">18:00<br>–18:15</div>
@@ -662,7 +675,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">18:15<br>–18:30</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>DMBQ（後半）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span><a href="#a-dmbq" class="timeline-link">DMBQ</a>（後半）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">18:30<br>–20:30</div>
@@ -670,7 +683,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">20:30<br>–22:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>BADBADNOTGOOD</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-bbng" class="timeline-link">BADBADNOTGOOD</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">22:00<br>–22:20</div>
@@ -678,7 +691,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">22:20<br>–23:15</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span>TOMORA（後半）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span><a href="#a-tomora" class="timeline-link">TOMORA</a>（後半）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">23:15<br>–27:30</div>
@@ -686,7 +699,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">27:30<br>–29:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>Soichi Terada</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span><a href="#a-soichiterada" class="timeline-link">Soichi Terada</a></div>
       </div>
     </div>
 
@@ -698,7 +711,7 @@
 
     <h3 class="sub-heading">おすすめアーティスト</h3>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-nnoon">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
         <span class="artist-time">11:50–12:40</span>
@@ -711,7 +724,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-yuragi">
       <div class="artist-head">
         <span class="stage-badge stage-shokudo">苗場食堂</span>
         <span class="artist-time">13:30–14:10</span>
@@ -724,7 +737,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-okadatakuro">
       <div class="artist-head">
         <span class="stage-badge stage-echo">ORANGE ECHO</span>
         <span class="artist-time">14:20–15:00</span>
@@ -737,7 +750,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-mogwai">
       <div class="artist-head">
         <span class="stage-badge stage-green">GREEN STAGE</span>
         <span class="artist-time">17:00–18:00</span>
@@ -750,7 +763,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-friko">
       <div class="artist-head">
         <span class="stage-badge stage-red">RED MARQUEE</span>
         <span class="artist-time">18:00–19:00</span>
@@ -763,7 +776,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-americanfootball">
       <div class="artist-head">
         <span class="stage-badge stage-red">RED MARQUEE</span>
         <span class="artist-time">20:10–21:10</span>
@@ -776,7 +789,7 @@
       <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-massiveattack">
       <div class="artist-head">
         <span class="stage-badge stage-green">GREEN STAGE</span>
         <span class="artist-time">21:10–22:40</span>
@@ -789,7 +802,7 @@
       <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-ichiroyamaguchi">
       <div class="artist-head">
         <span class="stage-badge stage-red">RED MARQUEE</span>
         <span class="artist-time">25:45–27:00</span>
@@ -802,7 +815,7 @@
       <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
     </article>
 
-    <article class="artist-card">
+    <article class="artist-card" id="a-takkyuishino">
       <div class="artist-head">
         <span class="stage-badge stage-red">RED MARQUEE</span>
         <span class="artist-time">27:00–29:00</span>
@@ -824,7 +837,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">11:50<br>–12:40</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>んoon</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-nnoon" class="timeline-link">んoon</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">12:40<br>–13:30</div>
@@ -832,7 +845,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">13:30<br>–14:10</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span>揺らぎ</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span><a href="#a-yuragi" class="timeline-link">揺らぎ</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">14:10<br>–14:20</div>
@@ -840,7 +853,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">14:20<br>–15:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>岡田拓郎</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span><a href="#a-okadatakuro" class="timeline-link">岡田拓郎</a></div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">15:00<br>–17:00</div>
@@ -848,7 +861,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">17:00<br>–17:55</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>MOGWAI（FRIKO開始に間に合うよう5分前に切り上げ）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-mogwai" class="timeline-link">MOGWAI</a>（FRIKO開始に間に合うよう5分前に切り上げ）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">17:55<br>–18:00</div>
@@ -856,7 +869,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">18:00<br>–19:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>FRIKO（フル視聴）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span><a href="#a-friko" class="timeline-link">FRIKO</a>（フル視聴）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">19:00<br>–20:10</div>
@@ -864,7 +877,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">20:10<br>–21:10</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>AMERICAN FOOTBALL（見れたら見たい）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span><a href="#a-americanfootball" class="timeline-link">AMERICAN FOOTBALL</a>（見れたら見たい）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">21:10<br>–21:20</div>
@@ -872,7 +885,7 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">21:20<br>–22:40</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>MASSIVE ATTACK（見れたら見たい・少し遅れて合流）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-massiveattack" class="timeline-link">MASSIVE ATTACK</a>（見れたら見たい・少し遅れて合流）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">22:40<br>–25:45</div>
@@ -880,11 +893,11 @@
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">25:45<br>–27:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>ICHIRO YAMAGUCHI（sakanaction）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span><a href="#a-ichiroyamaguchi" class="timeline-link">ICHIRO YAMAGUCHI（sakanaction）</a></div>
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">27:00<br>–29:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>TAKKYU ISHINO（同ステージにつき移動なし）</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span><a href="#a-takkyuishino" class="timeline-link">TAKKYU ISHINO</a>（同ステージにつき移動なし）</div>
       </div>
     </div>
 
