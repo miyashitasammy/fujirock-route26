@@ -13,6 +13,14 @@
     --day1:#FFE600;
     --day2:#FF3366;
     --day3:#0047FF;
+    --stage-green:#6EA400;
+    --stage-white:#929292;
+    --stage-red:#FF3300;
+    --stage-foh:#1CCBE3;
+    --stage-ganban:#E60012;
+    --stage-echo:#FFB344;
+    --stage-shokudo:#9D9812;
+    --stage-gypsy:#9D1257;
   }
   *{box-sizing:border-box;}
   body{
@@ -148,6 +156,163 @@
     text-align:center;
     letter-spacing:1px;
   }
+
+  /* ---- Day section common ---- */
+  .day-eyebrow{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:2px;
+    padding:5px 10px;
+    margin-bottom:10px;
+    border:3px solid var(--ink);
+  }
+  .day-title{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(1.8rem,6vw,2.4rem);
+    margin:0 0 28px;
+    text-transform:uppercase;
+  }
+  .sub-heading{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.5px;
+    margin:36px 0 18px;
+    padding-bottom:8px;
+    border-bottom:4px solid var(--ink);
+    text-transform:uppercase;
+  }
+
+  /* ---- Artist cards ---- */
+  .artist-card{
+    border:4px solid var(--ink);
+    background:var(--paper);
+    padding:20px;
+    margin-bottom:26px;
+    box-shadow:6px 6px 0 var(--ink);
+  }
+  .artist-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+  }
+  .stage-badge{
+    background:var(--ink);
+    color:var(--paper);
+    padding:4px 8px;
+    letter-spacing:1px;
+    white-space:nowrap;
+    border:2px solid var(--ink);
+  }
+  .stage-badge.stage-green{background:var(--stage-green); color:#fff; border-color:var(--ink);}
+  .stage-badge.stage-white{background:var(--stage-white); color:var(--ink); border-color:var(--ink);}
+  .stage-badge.stage-red{background:var(--stage-red); color:#fff; border-color:var(--ink);}
+  .stage-badge.stage-foh{background:var(--stage-foh); color:var(--ink); border-color:var(--ink);}
+  .stage-badge.stage-ganban{background:#000; color:var(--stage-ganban); border-color:var(--stage-ganban);}
+  .stage-badge.stage-echo{background:var(--stage-echo); color:#7A0E12; border-color:var(--ink);}
+  .stage-badge.stage-shokudo{background:var(--stage-shokudo); color:#fff; border-color:var(--ink);}
+  .stage-badge.stage-gypsy{background:var(--stage-gypsy); color:#fff; border-color:var(--ink);}
+  .artist-time{
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .artist-name{
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.25rem;
+    line-height:1.25;
+    margin:0 0 14px;
+    text-transform:uppercase;
+  }
+  .artist-profile{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.82rem;
+    line-height:1.65;
+    margin:0 0 16px;
+    padding-bottom:16px;
+    border-bottom:2px dashed var(--ink);
+  }
+  .video-wrap.small{
+    margin:0 0 16px;
+    box-shadow:5px 5px 0 var(--ink);
+  }
+  .artist-recommend{
+    font-size:0.95rem;
+    line-height:1.75;
+    margin:0;
+  }
+  .tag{
+    display:inline-block;
+    background:var(--day1);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    padding:2px 7px;
+    margin-right:8px;
+    letter-spacing:1px;
+    vertical-align:middle;
+  }
+  .tag.wish{
+    background:transparent;
+    border:2px solid var(--ink);
+    color:var(--ink);
+  }
+
+  /* ---- Route timeline ---- */
+  .timeline{
+    border:4px solid var(--ink);
+    box-shadow:8px 8px 0 var(--ink);
+    overflow:hidden;
+  }
+  .timeline-row{
+    display:flex;
+    border-bottom:2px solid var(--ink);
+    background:var(--paper);
+  }
+  .timeline-row:last-child{border-bottom:none;}
+  .timeline-row.rest{
+    background:repeating-linear-gradient(135deg, #e7e4d7 0 10px, #dcd8c8 10px 20px);
+  }
+  .timeline-time{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    width:104px;
+    flex-shrink:0;
+    padding:14px 10px;
+    border-right:2px solid var(--ink);
+    display:flex;
+    align-items:center;
+    line-height:1.3;
+  }
+  .timeline-content{
+    padding:14px;
+    font-size:0.9rem;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    line-height:1.4;
+  }
+  .timeline-row.live .timeline-content{font-weight:700;}
+  .timeline-stage-badge{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.65rem;
+    background:var(--ink);
+    color:var(--paper);
+    padding:2px 6px;
+    white-space:nowrap;
+    border:2px solid var(--ink);
+  }
+  .timeline-stage-badge.stage-green{background:var(--stage-green); color:#fff;}
+  .timeline-stage-badge.stage-white{background:var(--stage-white); color:var(--ink);}
+  .timeline-stage-badge.stage-red{background:var(--stage-red); color:#fff;}
+  .timeline-stage-badge.stage-foh{background:var(--stage-foh); color:var(--ink);}
+  .timeline-stage-badge.stage-ganban{background:#000; color:var(--stage-ganban); border-color:var(--stage-ganban);}
+  .timeline-stage-badge.stage-echo{background:var(--stage-echo); color:#7A0E12;}
+  .timeline-stage-badge.stage-shokudo{background:var(--stage-shokudo); color:#fff;}
+  .timeline-stage-badge.stage-gypsy{background:var(--stage-gypsy); color:#fff;}
 </style>
 </head>
 <body>
@@ -158,9 +323,9 @@
 </header>
 
 <nav class="day-nav">
-  <a href="#" class="day-tab day1">DAY 1</a>
-  <a href="#" class="day-tab day2">DAY 2</a>
-  <a href="#" class="day-tab day3">DAY 3</a>
+  <a href="#day1" class="day-tab day1">DAY 1</a>
+  <a href="#day2" class="day-tab day2">DAY 2</a>
+  <a href="#day3" class="day-tab day3">DAY 3</a>
 </nav>
 
 <main>
@@ -188,6 +353,541 @@
         <p class="small-note">準備は整いました。ここから3日間、無理のない移動と休憩を挟みながら、絶対に見たいアーティストを見に行きましょう。</p>
       </div>
     </div>
+  </section>
+
+  <section class="block day-section" id="day1">
+    <span class="day-eyebrow" style="background:var(--day1);">DAY 1 — 7.24 FRI</span>
+    <h2 class="day-title">1日目</h2>
+
+    <h3 class="sub-heading">おすすめアーティスト</h3>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-green">GREEN STAGE</span>
+        <span class="artist-time">11:00–12:00</span>
+      </div>
+      <h4 class="artist-name">ROUTE 17 Rock'n'Roll ORCHESTRA</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="ROUTE 17 Rock'n'Roll ORCHESTRA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-white">WHITE STAGE</span>
+        <span class="artist-time">13:00–13:50</span>
+      </div>
+      <h4 class="artist-name">SON ROMPE PERA</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="SON ROMPE PERA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">15:40–16:40</span>
+      </div>
+      <h4 class="artist-name">ALTIN GÜN</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="ALTIN GÜN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">16:40–17:40</span>
+      </div>
+      <h4 class="artist-name">OGRE YOU ASSHOLE</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="OGRE YOU ASSHOLE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-green">GREEN STAGE</span>
+        <span class="artist-time">19:00–20:10</span>
+      </div>
+      <h4 class="artist-name">Hi-STANDARD</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="Hi-STANDARD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">21:30–23:00</span>
+      </div>
+      <h4 class="artist-name">LETTUCE</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="LETTUCE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-ganban">GAN-BAN SQUARE</span>
+        <span class="artist-time">23:30–25:00</span>
+      </div>
+      <h4 class="artist-name">SUGIURUMN</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="SUGIURUMN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <h3 class="sub-heading">ルート</h3>
+
+    <div class="timeline">
+      <div class="timeline-row rest">
+        <div class="timeline-time">10:00</div>
+        <div class="timeline-content">入場・オアシスエリアで腹ごしらえ</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">11:00<br>–12:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>ROUTE 17 Rock'n'Roll ORCHESTRA</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">12:00<br>–13:00</div>
+        <div class="timeline-content">休憩・移動（GREEN→WHITE 徒歩15分＋余裕）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">13:00<br>–13:50</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span>SON ROMPE PERA</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">13:50<br>–15:40</div>
+        <div class="timeline-content">休憩・昼食・移動（WHITE→FIELD OF HEAVEN、たっぷり時間を使う）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">15:40<br>–16:40</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>ALTIN GÜN</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">16:40<br>–17:40</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>OGRE YOU ASSHOLE（同ステージにつき移動なし）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">17:40<br>–19:00</div>
+        <div class="timeline-content">休憩・夕食・移動（FIELD OF HEAVEN→GREEN 徒歩20〜25分＋休憩）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">19:00<br>–20:10</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>Hi-STANDARD</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">20:10<br>–21:30</div>
+        <div class="timeline-content">休憩・夕食・移動（GREEN→FIELD OF HEAVEN 徒歩20〜25分＋休憩）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">21:30<br>–23:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>LETTUCE</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">23:00<br>–23:30</div>
+        <div class="timeline-content">休憩・移動（FIELD OF HEAVEN→GAN-BAN SQUARE）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">23:30<br>–25:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-ganban">GAN-BAN SQUARE</span>SUGIURUMN</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="block day-section" id="day2">
+    <span class="day-eyebrow" style="background:var(--day2); color:#fff;">DAY 2 — 7.25 SAT</span>
+    <h2 class="day-title">2日目</h2>
+
+    <h3 class="sub-heading">おすすめアーティスト</h3>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">11:10–12:00</span>
+      </div>
+      <h4 class="artist-name">柴田聡子（BAND SET）</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="柴田聡子" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-shokudo">苗場食堂</span>
+        <span class="artist-time">12:10–12:50</span>
+      </div>
+      <h4 class="artist-name">Za SAVAGE</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="Za SAVAGE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-echo">ORANGE ECHO</span>
+        <span class="artist-time">13:50–14:30</span>
+      </div>
+      <h4 class="artist-name">neco眠る</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="neco眠る" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-green">GREEN STAGE</span>
+        <span class="artist-time">17:00–18:00</span>
+      </div>
+      <h4 class="artist-name">BASEMENT JAXX</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="BASEMENT JAXX" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-echo">ORANGE ECHO</span>
+        <span class="artist-time">17:50–18:30</span>
+      </div>
+      <h4 class="artist-name">DMBQ</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="DMBQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">20:30–22:00</span>
+      </div>
+      <h4 class="artist-name">BADBADNOTGOOD</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="BADBADNOTGOOD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-white">WHITE STAGE</span>
+        <span class="artist-time">22:00–23:15</span>
+      </div>
+      <h4 class="artist-name">TOMORA</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="TOMORA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-red">RED MARQUEE</span>
+        <span class="artist-time">27:30–29:00</span>
+      </div>
+      <h4 class="artist-name">Soichi Terada</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="Soichi Terada" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <h3 class="sub-heading">ルート</h3>
+
+    <div class="timeline">
+      <div class="timeline-row rest">
+        <div class="timeline-time">10:00</div>
+        <div class="timeline-content">入場・場内散策、朝食</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">11:10<br>–12:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>柴田聡子（BAND SET）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">12:00<br>–12:10</div>
+        <div class="timeline-content">移動（FIELD OF HEAVEN→苗場食堂）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">12:10<br>–12:50</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span>Za SAVAGE（移動状況次第で途中合流でもOK）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">12:50<br>–13:50</div>
+        <div class="timeline-content">休憩・移動（苗場食堂→ORANGE ECHO）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">13:50<br>–14:30</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>neco眠る</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">14:30<br>–17:00</div>
+        <div class="timeline-content">休憩・夕食・移動（長めに休んでGREEN方面へ）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">17:00<br>–18:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>BASEMENT JAXX</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">18:00<br>–18:15</div>
+        <div class="timeline-content">移動（GREEN→ORANGE ECHO）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">18:15<br>–18:30</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>DMBQ（後半）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">18:30<br>–20:30</div>
+        <div class="timeline-content">休憩・夕食・移動（ORANGE ECHO→FIELD OF HEAVEN）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">20:30<br>–22:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>BADBADNOTGOOD</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">22:00<br>–22:20</div>
+        <div class="timeline-content">移動（FIELD OF HEAVEN→WHITE）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">22:20<br>–23:15</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-white">WHITE</span>TOMORA（後半）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">23:15<br>–27:30</div>
+        <div class="timeline-content">長めの休憩・仮眠（深夜のSoichi Teradaに備えて体力温存、RED MARQUEEへ移動）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">27:30<br>–29:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>Soichi Terada</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="block day-section" id="day3">
+    <span class="day-eyebrow" style="background:var(--day3); color:#fff;">DAY 3 — 7.26 SUN</span>
+    <h2 class="day-title">3日目</h2>
+
+    <h3 class="sub-heading">おすすめアーティスト</h3>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
+        <span class="artist-time">11:50–12:40</span>
+      </div>
+      <h4 class="artist-name">んoon</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="んoon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-shokudo">苗場食堂</span>
+        <span class="artist-time">13:30–14:10</span>
+      </div>
+      <h4 class="artist-name">揺らぎ</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="揺らぎ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-echo">ORANGE ECHO</span>
+        <span class="artist-time">14:20–15:00</span>
+      </div>
+      <h4 class="artist-name">岡田拓郎</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="岡田拓郎" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-green">GREEN STAGE</span>
+        <span class="artist-time">17:00–18:00</span>
+      </div>
+      <h4 class="artist-name">MOGWAI</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="MOGWAI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-red">RED MARQUEE</span>
+        <span class="artist-time">18:00–19:00</span>
+      </div>
+      <h4 class="artist-name">FRIKO</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="FRIKO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-red">RED MARQUEE</span>
+        <span class="artist-time">20:10–21:10</span>
+      </div>
+      <h4 class="artist-name">AMERICAN FOOTBALL</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="AMERICAN FOOTBALL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-green">GREEN STAGE</span>
+        <span class="artist-time">21:10–22:40</span>
+      </div>
+      <h4 class="artist-name">MASSIVE ATTACK</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="MASSIVE ATTACK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-red">RED MARQUEE</span>
+        <span class="artist-time">25:45–27:00</span>
+      </div>
+      <h4 class="artist-name">ICHIRO YAMAGUCHI（sakanaction）</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="ICHIRO YAMAGUCHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <article class="artist-card">
+      <div class="artist-head">
+        <span class="stage-badge stage-red">RED MARQUEE</span>
+        <span class="artist-time">27:00–29:00</span>
+      </div>
+      <h4 class="artist-name">TAKKYU ISHINO</h4>
+      <p class="artist-profile">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="video-wrap small">
+        <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="TAKKYU ISHINO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </article>
+
+    <h3 class="sub-heading">ルート</h3>
+
+    <div class="timeline">
+      <div class="timeline-row rest">
+        <div class="timeline-time">10:30</div>
+        <div class="timeline-content">入場・場内散策</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">11:50<br>–12:40</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span>んoon</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">12:40<br>–13:30</div>
+        <div class="timeline-content">休憩・移動（FIELD OF HEAVEN→苗場食堂）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">13:30<br>–14:10</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-shokudo">苗場食堂</span>揺らぎ</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">14:10<br>–14:20</div>
+        <div class="timeline-content">移動（苗場食堂→ORANGE ECHO）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">14:20<br>–15:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span>岡田拓郎</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">15:00<br>–17:00</div>
+        <div class="timeline-content">休憩・夕食・移動（長めに休んでGREEN方面へ）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">17:00<br>–17:55</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>MOGWAI（FRIKO開始に間に合うよう5分前に切り上げ）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">17:55<br>–18:00</div>
+        <div class="timeline-content">移動（GREEN→RED MARQUEE 徒歩5分）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">18:00<br>–19:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>FRIKO（フル視聴）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">19:00<br>–20:10</div>
+        <div class="timeline-content">休憩・夕食（RED MARQUEE周辺で待機）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">20:10<br>–21:10</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>AMERICAN FOOTBALL（見れたら見たい）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">21:10<br>–21:20</div>
+        <div class="timeline-content">移動（RED MARQUEE→GREEN）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">21:20<br>–22:40</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span>MASSIVE ATTACK（見れたら見たい・少し遅れて合流）</div>
+      </div>
+      <div class="timeline-row rest">
+        <div class="timeline-time">22:40<br>–25:45</div>
+        <div class="timeline-content">長めの休憩・仮眠（深夜のICHIRO YAMAGUCHIに備えてRED MARQUEEへ戻る）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">25:45<br>–27:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>ICHIRO YAMAGUCHI（sakanaction）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">27:00<br>–29:00</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-red">RED MARQUEE</span>TAKKYU ISHINO（同ステージにつき移動なし）</div>
+      </div>
+    </div>
+
   </section>
 
 </main>
