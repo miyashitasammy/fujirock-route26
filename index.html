@@ -165,6 +165,76 @@
     letter-spacing:1px;
   }
 
+  /* ---- Scroll reveal ---- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px) rotate(-0.6deg);
+    transition:opacity 0.5s cubic-bezier(.2,.7,.3,1), transform 0.5s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0) rotate(0deg);
+  }
+
+  /* ---- Day-nav active state (scroll spy) ---- */
+  .day-tab.active{
+    box-shadow:inset 0 -6px 0 var(--ink);
+    transform:translateY(-2px);
+  }
+
+  /* ---- Glitch heading (hover) ---- */
+  .glitch{
+    position:relative;
+    display:inline-block;
+  }
+  .glitch:hover{
+    animation:glitchBase 0.3s steps(2,end) infinite;
+  }
+  .glitch::before,
+  .glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    opacity:0;
+    background:var(--paper);
+  }
+  .glitch:hover::before{
+    opacity:0.85;
+    color:var(--day2);
+    animation:glitchTop 0.35s steps(2,end) infinite;
+    clip-path:polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  .glitch:hover::after{
+    opacity:0.85;
+    color:var(--day3);
+    animation:glitchBottom 0.35s steps(2,end) infinite;
+    clip-path:polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+  @keyframes glitchBase{
+    0%{transform:translate(0,0);}
+    25%{transform:translate(1px,-1px);}
+    50%{transform:translate(-1px,1px);}
+    75%{transform:translate(1px,1px);}
+    100%{transform:translate(0,0);}
+  }
+  @keyframes glitchTop{
+    0%{transform:translate(0,0);}
+    20%{transform:translate(-3px,-2px);}
+    40%{transform:translate(3px,2px);}
+    60%{transform:translate(-2px,1px);}
+    80%{transform:translate(2px,-1px);}
+    100%{transform:translate(0,0);}
+  }
+  @keyframes glitchBottom{
+    0%{transform:translate(0,0);}
+    20%{transform:translate(3px,2px);}
+    40%{transform:translate(-3px,-1px);}
+    60%{transform:translate(2px,-2px);}
+    80%{transform:translate(-2px,1px);}
+    100%{transform:translate(0,0);}
+  }
+
   /* ---- Day section common ---- */
   .day-eyebrow{
     display:inline-block;
@@ -930,6 +1000,51 @@
 <footer>
   宮下サミー 千鳥足文芸部
 </footer>
+
+<script>
+  // ---- 1. Scroll reveal: cards & timeline rows animate in ----
+  const revealTargets = document.querySelectorAll(
+    '.artist-card, .timeline-row, .overview, .mindset'
+  );
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+
+  // ---- 2. Day-nav scroll spy: highlight current day tab ----
+  const daySections = document.querySelectorAll('.day-section');
+  const dayTabs = document.querySelectorAll('.day-tab');
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const activeId = entry.target.id;
+        dayTabs.forEach(tab => {
+          tab.classList.toggle('active', tab.getAttribute('href') === '#' + activeId);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  daySections.forEach(section => spyObserver.observe(section));
+
+  // ---- 3. Glitch heading on hover ----
+  const glitchTargets = document.querySelectorAll(
+    '.title, .day-title, .sub-heading'
+  );
+  glitchTargets.forEach(el => {
+    el.classList.add('glitch');
+    el.dataset.text = el.innerText;
+  });
+</script>
 
 </body>
 </html>
