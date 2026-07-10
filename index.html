@@ -176,11 +176,6 @@
     transform:translateY(0) rotate(0deg);
   }
 
-  /* ---- Day-nav active state (scroll spy) ---- */
-  .day-tab.active{
-    box-shadow:inset 0 -6px 0 var(--ink);
-  }
-
   /* ---- Glitch heading (hover) ---- */
   .glitch{
     position:relative;
@@ -197,6 +192,7 @@
     width:100%; height:100%;
     opacity:0;
     background:var(--paper);
+    white-space:pre-line;
   }
   .glitch:hover::before{
     opacity:0.85;
@@ -1019,24 +1015,7 @@
 
   revealTargets.forEach(el => revealObserver.observe(el));
 
-  // ---- 2. Day-nav scroll spy: highlight current day tab ----
-  const daySections = document.querySelectorAll('.day-section');
-  const dayTabs = document.querySelectorAll('.day-tab');
-
-  const spyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const activeId = entry.target.id;
-        dayTabs.forEach(tab => {
-          tab.classList.toggle('active', tab.getAttribute('href') === '#' + activeId);
-        });
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-
-  daySections.forEach(section => spyObserver.observe(section));
-
-  // ---- 3. Glitch heading on hover ----
+  // ---- 2. Glitch heading on hover ----
   const glitchTargets = document.querySelectorAll(
     '.title, .day-title, .sub-heading'
   );
