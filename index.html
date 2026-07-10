@@ -48,6 +48,14 @@
     margin:0;
     letter-spacing:0.5px;
   }
+  .series-tag{
+    font-family:'Space Grotesk',sans-serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1rem;
+    margin:0 0 8px;
+    letter-spacing:0.3px;
+  }
   .day-nav{
     display:flex;
     border-bottom:4px solid var(--ink);
@@ -248,6 +256,15 @@
     line-height:1.75;
     margin:0;
   }
+  .inline-link{
+    color:var(--ink);
+    text-decoration:underline;
+    text-decoration-style:dotted;
+    text-underline-offset:3px;
+  }
+  .inline-link:hover{
+    background:var(--day1);
+  }
   .tag{
     display:inline-block;
     background:var(--day1);
@@ -331,7 +348,8 @@
 <body>
 
 <header class="site-header">
-  <h1 class="title">FUJI ROCK<br>妄想ルートガイド</h1>
+  <h1 class="title">FUJI ROCK 26<br>MOUSOU ROUTE GUIDE</h1>
+  <p class="series-tag">Girl's Yesterday, Boy's Tomorrow 番外編</p>
   <p class="subtitle">FUJI ROCK FESTIVAL '26 / 7.24 FRI – 7.26 SUN / NAEBA</p>
 </header>
 
@@ -345,7 +363,7 @@
 
   <section class="block overview">
     <span class="eyebrow">OVERVIEW</span>
-    <p>無理のない移動と休憩時間を作り、絶対見たいアーティストを見る。妄想だからこそ本気で組む、3日間のルート。</p>
+    <p>無理のない移動と休憩時間を作り、絶対見たいアーティストを見る。妄想だからこそ本気で組む、3日間のルートをご紹介します。</p>
   </section>
 
   <section class="block mindset">
@@ -360,10 +378,10 @@
           <span class="cite">――「追いつめられた青春の爆発」より</span>
         </blockquote>
         <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/tjAPpRlkNRg" title="エレクトリック娑婆世界" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/fWoAa2hXCwU" title="エレクトリック娑婆世界" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <p>これを聴けば、きっと自信が持てるはずです。</p>
-        <p class="small-note">準備は整いました。ここから3日間、無理のない移動と休憩を挟みながら、絶対に見たいアーティストを見に行きましょう。</p>
+        <p class="small-note">準備は整いました。ここから3日間、無理のない移動と休憩を挟みながら、絶対に見たいアーティストを見に行きましょう。 ※なお、高橋敏幸は出演しません。</p>
       </div>
     </div>
   </section>
@@ -416,7 +434,7 @@
     <article class="artist-card" id="a-ogre">
       <div class="artist-head">
         <span class="stage-badge stage-foh">FIELD OF HEAVEN</span>
-        <span class="artist-time">16:40–17:40</span>
+        <span class="artist-time">17:40–18:40</span>
       </div>
       <h4 class="artist-name">OGRE YOU ASSHOLE</h4>
       <p class="artist-profile">2005年デビュー。石原洋プロデュースの三部作を経てセルフ制作へ移行。最新作『自然とコンピューター』でアナログシンセを導入。音源と異なるアレンジのライブを展開し、長野・大阪でイベント「DELAY」を開催。</p>
@@ -436,7 +454,7 @@
       <div class="video-wrap small">
         <iframe src="https://www.youtube.com/embed/wPSQgoq4Bug" title="Hi-STANDARD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <p class="artist-recommend"><span class="tag">MUST-SEE</span>ギターキッズとしては見ておきたいですよね。だいぶお世話になりました。</p>
+      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>ギターキッズとしては見ておきたいですよね。だいぶお世話になりました。</p>
     </article>
 
     <article class="artist-card" id="a-lettuce">
@@ -492,13 +510,17 @@
         <div class="timeline-time">15:40<br>–16:40</div>
         <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-altingun" class="timeline-link">ALTIN GÜN</a></div>
       </div>
-      <div class="timeline-row live">
+      <div class="timeline-row rest">
         <div class="timeline-time">16:40<br>–17:40</div>
+        <div class="timeline-content">同じFIELD OF HEAVENで待機・休憩（移動なし）</div>
+      </div>
+      <div class="timeline-row live">
+        <div class="timeline-time">17:40<br>–18:40</div>
         <div class="timeline-content"><span class="timeline-stage-badge stage-foh">FOH</span><a href="#a-ogre" class="timeline-link">OGRE YOU ASSHOLE</a>（同ステージにつき移動なし）</div>
       </div>
       <div class="timeline-row rest">
-        <div class="timeline-time">17:40<br>–19:00</div>
-        <div class="timeline-content">休憩・夕食・移動（FIELD OF HEAVEN→GREEN 徒歩20〜25分＋休憩）</div>
+        <div class="timeline-time">18:40<br>–19:00</div>
+        <div class="timeline-content">移動（FIELD OF HEAVEN→GREEN 徒歩20分、やや駆け足）</div>
       </div>
       <div class="timeline-row live">
         <div class="timeline-time">19:00<br>–20:10</div>
@@ -618,7 +640,7 @@
       <div class="video-wrap small">
         <iframe src="https://www.youtube.com/embed/jmd6pkEgV6c" title="TOMORA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <p class="artist-recommend"><span class="tag">MUST-SEE</span>ミーハーですけど、今年TOMORAを見たという思い出作りとして。ケミカル好きだし。</p>
+      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>ミーハーですけど、今年TOMORAを見たという思い出作りとして。ケミカル好きだし。</p>
     </article>
 
     <article class="artist-card" id="a-soichiterada">
@@ -666,16 +688,16 @@
         <div class="timeline-content">休憩・夕食・移動（長めに休んでGREEN方面へ）</div>
       </div>
       <div class="timeline-row live">
-        <div class="timeline-time">17:00<br>–18:00</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-basementjaxx" class="timeline-link">BASEMENT JAXX</a></div>
+        <div class="timeline-time">17:00<br>–17:45</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-green">GREEN</span><a href="#a-basementjaxx" class="timeline-link">BASEMENT JAXX</a>（17:45頃切り上げ）</div>
       </div>
       <div class="timeline-row rest">
-        <div class="timeline-time">18:00<br>–18:15</div>
+        <div class="timeline-time">17:45<br>–17:50</div>
         <div class="timeline-content">移動（GREEN→ORANGE ECHO）</div>
       </div>
       <div class="timeline-row live">
-        <div class="timeline-time">18:15<br>–18:30</div>
-        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span><a href="#a-dmbq" class="timeline-link">DMBQ</a>（後半）</div>
+        <div class="timeline-time">17:50<br>–18:30</div>
+        <div class="timeline-content"><span class="timeline-stage-badge stage-echo">ORANGE ECHO</span><a href="#a-dmbq" class="timeline-link">DMBQ</a>（フル視聴）</div>
       </div>
       <div class="timeline-row rest">
         <div class="timeline-time">18:30<br>–20:30</div>
@@ -773,7 +795,7 @@
       <div class="video-wrap small">
         <iframe src="https://www.youtube.com/embed/z2ArG5tpPRc" title="Friko" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <p class="artist-recommend"><span class="tag">MUST-SEE</span>マジでニワカですが、今年たまたま「Seven Degrees」を聞いて衝撃を受けてしまい、勝手に英訳してしまうぐらい好きになってしまいました。詳しくはコチラをどうぞ。<br>https://morinakanishi.com/er006/</p>
+      <p class="artist-recommend"><span class="tag">MUST-SEE</span>マジでニワカですが、今年たまたま「Seven Degrees」を聞いて衝撃を受けてしまい、勝手に英訳してしまうぐらい好きになってしまいました。詳しくは<a href="https://morinakanishi.com/er006/" target="_blank" rel="noopener" class="inline-link">コチラ</a>をどうぞ。</p>
     </article>
 
     <article class="artist-card" id="a-americanfootball">
@@ -799,7 +821,7 @@
       <div class="video-wrap small">
         <iframe src="https://www.youtube.com/embed/Vi76bxT7K6U" title="MASSIVE ATTACK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>ここまで、かなり激重でDoopなチョイスで動いている。このご時世、MASSIVE ATTACKを大トリにしたのは主催の意思を感じざるえないですが、個人的には「エンティティ」として生きることとパラノイアとの葛藤だと思ってるので、普通におもしろう。</p>
+      <p class="artist-recommend"><span class="tag wish">見れたら見たい</span>ここまで、かなり激重でDoopなチョイスで動いている。このご時世、MASSIVE ATTACKを大トリにしたのは主催の意思を感じざるえないですが、個人的には「エンティティ」として生きることとパラノイアとの葛藤だと思ってるので、普通におもしろそう。</p>
     </article>
 
     <article class="artist-card" id="a-ichiroyamaguchi">
@@ -906,7 +928,7 @@
 </main>
 
 <footer>
-  DAY 1〜3 のルートは近日公開 / MADE FOR NAEBA
+  宮下サミー 千鳥足文芸部
 </footer>
 
 </body>
